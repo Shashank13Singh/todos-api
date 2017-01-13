@@ -26,6 +26,7 @@ app.post('/todos', (req, res) => {
 app.get('/todos', (req, res) => {
   Todo.find().then((todos) => {
     res.send({todos});
+    console.log(JSON.stringify(todos, undefined, 2));
   }, (err) => {
     res.status(400).send(err);
   });
